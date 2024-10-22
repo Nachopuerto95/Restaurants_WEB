@@ -4,11 +4,14 @@ const express = require('express');
 const logger = require('morgan');
 require('./configs/db.config');
 const app = express();
+const cors = require("./middlewares/cors.middleware");
+
 
 // Middlewares
-
+app.use(cors)
 app.use(express.json());
 app.use(logger('dev'));
+
 
 //Router
 

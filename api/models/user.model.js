@@ -13,6 +13,7 @@ const schema = new Schema(
             required: true,
         },
         email: {
+            unique: true,
             type: String,
             required: true,
         },
@@ -20,19 +21,13 @@ const schema = new Schema(
             type: String,
             required: true,
         },
-        username: {
-            type: String,
-            required: true,
-        },
         location: {
             type: {
                 type: String,
                 enum: ['Point'],
-                required: true
             },
             coordinates: {
                 type: [Number],
-                required: true
             }
         },
         avatar: {
@@ -69,8 +64,8 @@ schema.pre('save', function(next) {
 })
 
 // Compara el hash al hacer login
-schema.method('checkPassword', function () {
-    return bcrypt.compare(this.password, password)
+schema.method('checkPassword', function (password) {
+    return bcrypt.compare(password, this.password)
 })
 
 module.exports = mongoose.model('User', schema);

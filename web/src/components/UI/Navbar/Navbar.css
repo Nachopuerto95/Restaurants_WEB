@@ -1,0 +1,101 @@
+
+
+.navbar{
+    box-shadow: -2px 6px 8px -3px rgba(0,0,0,0.33);
+    padding: 10px 40px;
+
+}
+
+.fa-chevron-left{
+    position: absolute;
+    left: -20px;
+}
+
+
+.navbar-brand{
+    font-family: "Knewave", system-ui;
+    color: #d13470;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 2000;
+}
+
+.navbar-brand:hover{
+    color: #d13470;
+}
+.navbar-brand img {
+    height: 35px;
+}
+
+.nav-link.active {
+    font-weight: 600;
+}
+
+.nav-link.active i {
+   opacity: 1;
+   color: #d13470;
+}
+
+.nav-link i{
+    margin-right: 10px;
+    opacity: .5;
+}
+
+
+
+.navbar-nav {
+    gap: 15px;
+}
+
+@media (max-width: 991px) {
+
+.button {
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60vw !important;
+}
+
+    .navbar-collapse {
+      height: 100vh; /* Ocupa todo el alto de la pantalla */
+      background-color: #f8f9fa; /* Asegúrate de que el fondo sea visible */
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1001;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 60px 0;
+    }
+
+    /* Ajustes adicionales para que los links estén mejor alineados */
+    .navbar-nav {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centrar verticalmente los elementos */
+      align-items: center; /* Centrar horizontalmente los elementos */
+      margin-bottom: 60px;
+    }
+  
+    .navbar-nav .nav-item {
+      margin: 10px 0; /* Espaciado entre elementos */
+    }
+  
+    .navbar-collapse {
+      padding-top: 20px; /* Espacio superior opcional */
+    }
+  }
+
+  .secondary-nav-btns{
+    
+  }
+
+  

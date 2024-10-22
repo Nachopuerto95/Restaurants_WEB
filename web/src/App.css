@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.button {
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 9px 30px;
+
+}
+
+.button-type1 {
+     background-color: #d13470;;
+     text-decoration: none;
+     color: white;
+     box-sizing: border-box !important;
+     
+}
+
+.button-type2 {
+    background-color: transparent;
+    border: 2px solid #d13470 ;
+    padding: 7px 28px;
+    color: #d13470;
+    box-sizing: border-box Im !important;
+
+}
