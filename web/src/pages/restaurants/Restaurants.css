@@ -1,0 +1,44 @@
+
+.page-container {
+    position: relative;
+    height: 790px;
+    display: flex;
+}
+
+
+.res-map {
+
+    z-index: 0; 
+}
+
+
+.restaurants-container {
+    position: absolute;
+    width: 502px;
+    height: calc(770px - 40px); 
+    background-color: rgba(255, 255, 255, 0.534);
+    backdrop-filter: blur(5px);
+    margin: 20px; 
+    z-index: 1;
+    box-sizing: border-box; 
+    padding: 20px;
+    border: 1px solid rgba(207, 207, 207, 0.637);
+    box-shadow: -1px 0px 7px 4px rgba(27, 27, 27, 0.199);
+    overflow-y: scroll;
+    border-bottom: 15px solid white;
+}
+
+
+.pagination-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+.pagination-buttons button{
+    padding: 8px 10px;
+    font-weight: 700;   
+    
+
+}

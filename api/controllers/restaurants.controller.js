@@ -15,13 +15,30 @@ module.exports.create = (req, res, next) => {
     })
 }
 
+
 module.exports.list = (req, res, next) => {
-    Restaurant.find()
-    .then(restaurants => {
-        res.json(restaurants);
-    })
-    .catch(next);
-}
+    const { category, lat, lng, limit = 20, page = 0 } = req.query;
+    const criterial = {};
+    if (category) criterial.category = category;
+    if (lat && lng) {
+      criterial.location = {
+       $near: {
+         $geometry: {
+            type: "Point" ,
+           coordinates: [lng, lat]
+         },
+         $maxDistance: 3000,
+         $minDistance: 0
+       }
+     }
+    }
+    Restaurant.find(criterial)
+      .sort({ _id: -1 })
+      .skip(page * limit)
+      .limit(limit)
+      .then((restaurants) => res.json(restaurants))
+      .catch(next);
+  };
 
 module.exports.detail = (req, res, next) => {
     Restaurant.findById(req.params.id)

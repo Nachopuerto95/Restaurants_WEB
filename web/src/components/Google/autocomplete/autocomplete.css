@@ -1,0 +1,116 @@
+.search-bar {
+    border: 2px solid rgba(182, 182, 182, 0.603) ;
+    border-radius: 50px;
+    padding-left: 20px !important;
+    width: 100%;
+    height: 50px;
+    font-size: 1.4rem;
+    margin-top: 0px;
+}
+.search-bar:focus {
+    height: 50px; 
+    transition: all 0.3s ease-in-out; 
+
+  }
+.search-bar-container{
+    position: relative;
+    
+}
+
+
+.search-bar-container label{
+    margin-left: 10px;
+    font-size: 1.2rem;
+
+}
+
+.search-bar-container button{
+    position: absolute;
+    font-size: 1.3rem;
+    right: 0px;
+    border-radius: 50px;
+    margin: 4px 4px;
+    height: 42px;
+    border: none;
+    background-color: var(--primary-brand-color);
+    color: white;
+    font-weight: 700;
+    padding: 0px 15px;
+    
+}
+
+.search-bar-container button:hover{
+background-color: var(--hover-brand-color);
+}
+
+.search-bar-container button i{
+    margin-right: 5px;
+}
+
+
+.pac-container {
+    border:none !important; 
+    box-shadow:none !important; 
+    background-color: #f9f9f9 !important; 
+    border-radius: 0 0 20px 20px;
+}
+
+.results-dropdown h5 {
+    margin-top: 20px !important;
+    font-size: 1.8rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+}
+
+
+.pac-item {
+    padding: 10px !important; 
+    color: #3333339c !important; 
+    border-top: 1px solid #e0e0e0 !important; 
+    font-family: Helvetica, sans-serif;
+    font-size: 1.3rem;
+}
+
+
+.pac-item:hover {
+    background-color: #d8d8d8a9 !important;
+    cursor: pointer;
+}
+
+.pac-item.ubi-item::before {
+    content: "\f601" !important; 
+
+}
+
+.pac-item .pac-icon {
+    display: none; /* Oculta el ícono predeterminado de Google */
+}
+
+.pac-item::before {
+    content: "\f3c5"; /* Código del ícono de ubicación en Font Awesome */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900; 
+    color: #33333388; 
+    margin-right: 15px; 
+    font-size: 2rem;
+}
+
+
+.pac-item:hover::before {
+    color: var(--primary-brand-color);
+}
+
+.results-dropdown {
+width: 100%;
+margin: auto;
+margin-top: 0px;
+background-color: white;
+position: absolute;
+border-radius: 0 0px 20px 20px;
+z-index: 1000;
+box-shadow: 0px 5px 4px 2px rgba(27, 27, 27, 0.199);
+padding: 20px;
+padding-bottom: 30px;
+
+
+}

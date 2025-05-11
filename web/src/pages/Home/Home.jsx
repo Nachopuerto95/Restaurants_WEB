@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import AutoComplete from '../../components/Google/autocomplete/AutoComplete';
 import { useNavigate } from 'react-router-dom';
-import { getFormattedAddress } from '../../services/api.services';
+import { useLocation } from '../../contexts/location.context';
+import heroImage from '../../assets/javier-molina-L99H7JKYPVY-unsplash.jpg'
+import './home.css'
+import logo from '../../assets/beetitlogo2.svg';
+import PageLayout from '../Layout/PageLayout';
+
+
 
 function Home() {
-  const [restaurants, setRestaurants] = useState(null); 
-  const [latitude, setLatitude] = useState(null);  
-  const [longitude, setLongitude] = useState(null); 
-  const [location, setLocation] = useState(null); 
-
   const navigate = useNavigate();
   
 
@@ -20,57 +21,65 @@ function Home() {
     });
   };
 
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const lat = position.coords.latitude;
-          const lng = position.coords.longitude;
 
-          setLatitude(lat);
-          setLongitude(lng);
-          handleAddress(lat, lng)
-          
-          
-        },
-        (error) => {
-          console.error("Error al obtener la ubicación:", error);
-        }
-      );
-    } else {
-      console.error("La geolocalización no es soportada por este navegador.");
-    }
-  }, []); 
-
-  const handleAddress = async (lat, lng) => {
-    try {
-      const data = await getFormattedAddress(lat, lng);  
-      const newAddress = data.results[0]
-      const address = `${
-          newAddress.address_components[1].long_name + ', ' +
-          newAddress.address_components[0].long_name + ', ' +
-          newAddress.address_components[3].long_name + ', ' +
-          newAddress.address_components[7].long_name
-        }`
-        setLocation({
-          address,
-          lat,      
-          lng       
-        });
-
-    } catch (error) {
-      console.error('Error al obtener la dirección formateada:', error);
-    }
-  };
+  
 
   return (
-    <div>
-      <h1>Find your Restaurant</h1>
-      <h3>You can check locations, schedules, reviews, menus and much more!</h3>
-      <AutoComplete onPlaceChange={handlePlaceChange} initialAddress={location}/>
+    <>
+      <PageLayout>
+        <div className="container-fluid hero-section">
+          <div className="row align-items-center hero">
+              <div className="col-md-6">
+                <div className="home-text">
+                    <span className='home-brand'><img src={logo}/> Beet it</span>
+                    <h1 className='h1-cs'>Find your Restaurant</h1>
+                    <h3>You can check locations, schedules, reviews, menus and much more!</h3>
+                    <AutoComplete onPlaceChange={handlePlaceChange}/>
+                </div>
+              </div>
+              <div className="col-md-6">
+                  <div className="image-container">
+                      <img src={heroImage} alt="Imagen con borde diagonal" className="img-fluid"/>
+                  </div>
+              </div>
+          </div>
 
-      
-    </div>
+          <section className='container-fluid how-section'>
+                <div className='section-title'>
+                  <p>How to use Beet it</p>
+                  <h4>It's that simple</h4>
+                </div>
+                
+                <div className="how-use">
+                  <div className="use-item">
+                      <i className="fa-solid fa-map-location-dot"></i>
+                      <div>
+                        <h5>Step 1</h5>
+                        <p>We will show you restaurants near you or in the area where you want to find them.</p>
+                      </div>
+                      
+                  </div>
+                  <div className="use-item">
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                    <div>
+                      <h5>Find your establishment</h5>
+                    <p>Find it in our long list of establishments, know their opening hours, menus etc.</p>
+                    </div>
+                    
+                  </div>
+                  <div className="use-item">
+                    <i className="fa-regular fa-star-half-stroke"></i>
+                    <div>
+                      <h5>Ratings and reviews</h5>
+                    <p>A little description bllablabla description bllablabla</p>
+                    </div>
+                    
+                  </div>
+                </div>
+          </section>
+      </div>
+      </PageLayout>
+    </>
   );
 }
 

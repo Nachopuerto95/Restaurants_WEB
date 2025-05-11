@@ -1,0 +1,151 @@
+.rest-item{
+    border-bottom: 1px solid rgb(192, 192, 192);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: auto 100px; /* Dos columnas: imagen y contenido */
+    grid-template-rows: auto auto; /* Dos filas: contenido principal y enlaces */
+    justify-content: space-between;
+    position: relative;
+    padding: 20px 10px;
+    
+}
+
+.rest-item:hover{
+    background-color: rgba(219, 219, 219, 0.74);
+    cursor: pointer;
+}
+
+.rest-img{
+   height: 100px;
+   min-height: 100px;
+   min-width: 100px;
+
+   
+}
+
+
+.img-container{
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    overflow: hidden;
+    border-radius: 7px;
+    border: 2px solid rgb(199, 199, 199);
+}
+
+.rest-title img{
+    width: 15px ;
+    border-radius: 2px;
+    margin-bottom: 5px;
+}
+
+.rest-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+   
+}
+
+.rest-title h5{
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: rgb(131, 131, 131);
+}
+
+.rest-ratings-div{
+    display: flex;
+    gap: 7px;
+}
+
+.rest-info p{
+    font-size: 1.4rem;
+    margin: 0;
+    margin-bottom: 2px;
+}
+
+.star-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.star-rating i{
+    font-size: 1.2rem;
+    margin-right: 2px;
+}
+
+.rest-info.isOpen {
+    font-weight: 700;
+
+}
+
+.rest-schedule, .rest-schedule p{
+    display: flex;
+    gap: 10px;
+    font-size: 1.3rem;
+    max-width: 290px;
+}
+
+.rest-links{
+    grid-column: 2; /* Hace que `rest-links` ocupe todo el ancho en la segunda fila */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    right: 5px;
+    bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.rest-links a{
+    text-decoration: none;
+    background-color: rgb(153, 153, 153);
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    font-size: 1.3rem;
+    color: white;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+.rest-links a:hover{
+    background-color: var(--primary-brand-color);
+}
+
+.review-prev img{
+    width: 20px;
+}
+
+.review-user{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 5px 0 5px 0;
+}
+.review-user p{
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.review-user strong{
+    margin-right: 4px;
+    margin-left: 8px;
+}
+
+.readmore-btn{
+    background: none;
+    border: none;
+    color: rgb(43, 104, 197);
+}
+.readmore-btn:hover {
+    color: var(--primary-brand-color);
+}
+
+.review-prev-text{
+    font-size: 1.3rem;
+    margin-top: 10px;
+}

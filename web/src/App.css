@@ -1,7 +1,42 @@
 body {
     margin: 0;
     box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    overflow-x: hidden;
+    padding: 0;
+
 }
+
+:root{
+    --primary-brand-color: rgb(209, 45, 80);
+    --hover-brand-color: rgb(177, 36, 66);
+    --jumbo-height: 80px;
+}
+
+html{
+    font-size:  62.5%;
+}
+
+*::-webkit-scrollbar {
+    width: var(--scroll-size, 10px);
+    height: var(--scroll-size, 10px);
+  }
+  *::-webkit-scrollbar-track {
+    background-color: var(--scroll-track, transparent);
+    border-radius: var(--scroll-track-radius, var(--scroll-radius));
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb-color, grey);
+    background-image: var(--scroll-thumb, none);
+    border-radius: var(--scroll-thumb-radius, var(--scroll-radius));
+  }
+
+  :root {
+    --scroll-size: 8px;
+    --scroll-radius: 10px;
+    --scroll-track: rgba(88, 88, 88, 0.466);
+    --scroll-thumb-color: var(--primary-brand-color);
+  }
 
 
 .button {
@@ -11,19 +46,39 @@ body {
 
 }
 
+
 .button-type1 {
-     background-color: #d13470;;
+     background-color: var(--primary-brand-color);;
      text-decoration: none;
      color: white;
      box-sizing: border-box !important;
      
 }
 
+.button-type1:hover{
+    background-color: var(--hover-brand-color);
+}
+
+.button-type2:hover{
+    background-color: rgba(56, 56, 56, 0.116);
+    font-weight: 700;
+}
+
+
 .button-type2 {
     background-color: transparent;
-    border: 2px solid #d13470 ;
+    border: 2px solid var(--primary-brand-color) ;
     padding: 7px 28px;
-    color: #d13470;
-    box-sizing: border-box Im !important;
+    color: var(--primary-brand-color);
+    box-sizing: border-box  !important;
 
+}
+
+.rounded-btn{
+    min-width: 80px;
+    height: 100%;
+}
+
+.cls-1{
+    color: var(--primary-brand-color);
 }

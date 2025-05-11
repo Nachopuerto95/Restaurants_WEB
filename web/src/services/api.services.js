@@ -73,3 +73,7 @@ export function getFormattedAddress(lat, lng) {
     return response.data; 
   });
 }
+
+export function getRestaurants(params) {
+  return http.get("/restaurants", { params });
+}
